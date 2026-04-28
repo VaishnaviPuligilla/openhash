@@ -41,6 +41,43 @@ const createImageBitmapFromFile = async (file) => {
   });
 };
 
+const loadVideoElementFromFile = async (file) =>
+  new Promise((resolve, reject) => {
+    const video = document.createElement('video');
+    const objectUrl = URL.createObjectURL(file);
+
+    const cleanup = () => {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+      URL.revokeObjectURL(objectUrl);
+    };
+
+    video.preload = 'metadata';
+    video.muted = true;
+    video.playsInline = true;
+
+    video.onloadedmetadata = () => {
+      const targetTime = Number.isFinite(video.duration) && video.duration > 0.25 ? 0.2 : 0;
+      const finalize = () => resolve({ video, cleanup });
+
+      if (targetTime === 0) {
+        finalize();
+        return;
+      }
+
+      video.onseeked = () => finalize();
+      video.currentTime = Math.min(targetTime, Math.max(0, video.duration - 0.05));
+    };
+
+    video.onerror = () => {
+      cleanup();
+      reject(new Error('Failed to decode video'));
+    };
+
+    video.src = objectUrl;
+  });
+
 const blobToUint8Array = async (blob) => {
   const buffer = await blob.arrayBuffer();
   return new Uint8Array(buffer);
@@ -100,7 +137,52 @@ export const buildAnalysisPayload = async (file) => {
 };
 
 export const extractVisualSignature = async (file) => {
-  if (!file?.type?.startsWith('image/')) {
+  if (!file?.type) {
+    return null;
+  }
+
+  if (file.type.startsWith('video/')) {
+    const { video, cleanup } = await loadVideoElementFromFile(file);
+    const canvas = document.createElement('canvas');
+    canvas.width = GRID_SIZE;
+    canvas.height = GRID_SIZE;
+
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+    context.drawImage(video, 0, 0, GRID_SIZE, GRID_SIZE);
+
+    const { data } = context.getImageData(0, 0, GRID_SIZE, GRID_SIZE);
+    const histogram = new Array(HISTOGRAM_BINS).fill(0);
+    const colorMoments = [];
+
+    for (let i = 0; i < data.length; i += 4) {
+      const r = clampChannel(data[i]);
+      const g = clampChannel(data[i + 1]);
+      const b = clampChannel(data[i + 2]);
+      const brightness = Math.round((r + g + b) / 3);
+      const bin = Math.min(HISTOGRAM_BINS - 1, Math.floor((brightness / 256) * HISTOGRAM_BINS));
+
+      histogram[bin] += 1;
+      colorMoments.push(
+        Number((r / 255).toFixed(3)),
+        Number((g / 255).toFixed(3)),
+        Number((b / 255).toFixed(3)),
+      );
+    }
+
+    const signature = {
+      kind: 'video',
+      width: video.videoWidth || null,
+      height: video.videoHeight || null,
+      duration: Number.isFinite(video.duration) ? Number(video.duration.toFixed(3)) : null,
+      histogram: normalize(histogram),
+      colorMoments,
+    };
+
+    cleanup();
+    return signature;
+  }
+
+  if (!file.type.startsWith('image/')) {
     return null;
   }
 

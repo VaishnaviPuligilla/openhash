@@ -877,8 +877,24 @@ const cosineSimilarity = (a = [], b = []) => {
   return dot / (Math.sqrt(magA) * Math.sqrt(magB));
 };
 
+const compareDurationSimilarity = (source, candidate) => {
+  const sourceDuration = Number(source?.duration || 0);
+  const candidateDuration = Number(candidate?.duration || 0);
+
+  if (!sourceDuration || !candidateDuration) return 0;
+
+  const shorter = Math.min(sourceDuration, candidateDuration);
+  const longer = Math.max(sourceDuration, candidateDuration);
+
+  return shorter / longer;
+};
+
 const compareVisualSignatures = (source, candidate) => {
-  if (!source || !candidate || source.kind !== 'image' || candidate.kind !== 'image') {
+  if (!source || !candidate || source.kind !== candidate.kind) {
+    return 0;
+  }
+
+  if (!['image', 'video'].includes(source.kind)) {
     return 0;
   }
 
@@ -1027,7 +1043,7 @@ app.post('/api/verify', async (req, res) => {
       const requestedSignature = metadata?.visualSignature;
       let bestMatch = null;
 
-      if (requestedSignature?.kind === 'image') {
+      if (requestedSignature?.kind === 'image' || requestedSignature?.kind === 'video') {
         allAssets.forEach((asset) => {
           const similarity = compareVisualSignatures(
             requestedSignature,
@@ -1038,6 +1054,44 @@ app.post('/api/verify', async (req, res) => {
             bestMatch = { asset, similarity };
           }
         });
+      }
+
+      if (bestMatch && requestedSignature?.kind === 'video') {
+        const matchedSignature = bestMatch.asset.visualSignature || bestMatch.asset.metadata?.visualSignature;
+        const durationSimilarity = compareDurationSimilarity(requestedSignature, matchedSignature);
+
+        if (bestMatch.similarity >= 0.88 && durationSimilarity > 0 && durationSimilarity < 0.85) {
+          const heuristicAnalysis = currentAnalysis || buildLocalFallbackAnalysis(analyzeAsset({ hash, metadata }));
+          const fallbackProvenance = buildLocalFallbackProvenance({
+            hash,
+            metadata,
+            aiAnalysis: heuristicAnalysis,
+          });
+
+          return res.json({
+            found: false,
+            tampered: true,
+            hash,
+            matchedHash: bestMatch.asset.hash,
+            proofId: bestMatch.asset.proofId || buildProofId(bestMatch.asset.hash),
+            score: heuristicAnalysis.humanOriginScore,
+            aiAnalysis: heuristicAnalysis,
+            provenance: fallbackProvenance,
+            blockchainAnchor: bestMatch.asset.blockchainAnchor || null,
+            timestamp: bestMatch.asset.timestamp || new Date().toISOString(),
+            similarity: Number(((bestMatch.similarity + durationSimilarity) / 2).toFixed(2)),
+            message: 'This upload matches a registered video, but its duration and structure indicate post-creation trimming or modification.',
+            registryState: 'Match found (Trimmed or modified video detected)',
+            insights: buildVerifyInsights({
+              status: 'tampered',
+              similarity: Number(((bestMatch.similarity + durationSimilarity) / 2).toFixed(2)),
+              aiAnalysis: heuristicAnalysis,
+              metadata,
+              matchedAsset: bestMatch.asset,
+              provenance: bestMatch.asset.provenance,
+            }),
+          });
+        }
       }
 
       if (bestMatch && bestMatch.similarity >= VERIFIED_SIMILARITY_THRESHOLD) {
