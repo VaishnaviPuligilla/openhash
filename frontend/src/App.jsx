@@ -343,6 +343,15 @@ const Icon = ({ name }) => {
         <path d="M17 8h2v2" />
       </>
     ),
+    trash: (
+      <>
+        <path d="M4 7h16" />
+        <path d="M9 7V4h6v3" />
+        <path d="M7 7l1 13h8l1-13" />
+        <path d="M10 11v5" />
+        <path d="M14 11v5" />
+      </>
+    ),
     time: (
       <>
         <circle cx="12" cy="12" r="8" />
@@ -868,8 +877,10 @@ const HistoryView = ({
                     className="secondary-button danger-button history-delete-button"
                     onClick={() => onDeleteItem(item)}
                     disabled={deleteBusy || !item.hash}
+                    aria-label={`Delete ${item.fileName}`}
+                    title="Delete permanently"
                   >
-                    <span>{deleteBusy ? 'Deleting' : 'Delete Permanently'}</span>
+                    <Icon name="trash" />
                   </button>
                 </td>
               </tr>
@@ -1027,7 +1038,7 @@ function App() {
     try {
       await deleteAssets([entry.hash]);
 
-      const nextHistory = history.filter((item) => item.hash !== entry.hash);
+      const nextHistory = history.filter((item) => item.id !== entry.id);
       setHistory(nextHistory);
       writeHistory(user.email, nextHistory);
       if (selectedHistoryId && nextHistory.every((item) => item.id !== selectedHistoryId)) {

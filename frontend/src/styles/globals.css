@@ -108,20 +108,27 @@ button {
   display: grid;
   gap: 18px;
   text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .auth-brand {
-  font-size: clamp(2rem, 6vw, 3.6rem);
-  letter-spacing: 0.2em;
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  letter-spacing: clamp(0.08em, 0.18vw, 0.18em);
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .auth-input {
+  width: 100%;
   min-height: 56px;
   padding: 0 16px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
+  box-sizing: border-box;
 }
 
 .google-button,
@@ -528,7 +535,11 @@ button {
 
 .history-delete-button {
   min-height: 40px;
-  white-space: nowrap;
+  min-width: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .history-table-wrap {
@@ -651,6 +662,7 @@ button {
   .brand-title,
   .auth-brand {
     font-size: 1.8rem;
+    letter-spacing: 0.08em;
   }
 
   .nav-list {
