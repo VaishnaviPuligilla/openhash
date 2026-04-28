@@ -831,7 +831,7 @@ const HistoryView = ({
   user,
   onSelectItem,
   onDeleteItem,
-  deleteBusy,
+  deleteBusyId,
 }) => (
   <div className="view-stack">
     <section className="workspace-card">
@@ -876,7 +876,7 @@ const HistoryView = ({
                     type="button"
                     className="secondary-button danger-button history-delete-button"
                     onClick={() => onDeleteItem(item)}
-                    disabled={deleteBusy || !item.hash}
+                    disabled={deleteBusyId === item.id || !item.hash}
                     aria-label={`Delete ${item.fileName}`}
                     title="Delete permanently"
                   >
@@ -981,7 +981,7 @@ function App() {
   const [history, setHistory] = useState([]);
   const [selectedHistoryId, setSelectedHistoryId] = useState('');
   const [showVerifyAnalysis, setShowVerifyAnalysis] = useState(false);
-  const [deleteBusy, setDeleteBusy] = useState(false);
+  const [deleteBusyId, setDeleteBusyId] = useState('');
 
   useEffect(() => {
     const timer = window.setTimeout(() => setShowSplash(false), 2200);
@@ -1033,32 +1033,32 @@ function App() {
   const handleDeleteHistoryItem = async (entry) => {
     if (!entry?.hash || !user?.email) return;
 
-    setDeleteBusy(true);
+    setDeleteBusyId(entry.id);
+
+    const nextHistory = history.filter((item) => item.id !== entry.id);
+    setHistory(nextHistory);
+    writeHistory(user.email, nextHistory);
+    if (selectedHistoryId && nextHistory.every((item) => item.id !== selectedHistoryId)) {
+      setSelectedHistoryId(nextHistory[0]?.id || '');
+    }
+    setAuthenticateWorkspace((current) =>
+      current.fileHash === entry.hash
+        ? { ...emptyWorkspace, error: '' }
+        : current,
+    );
+    setVerifyWorkspace((current) =>
+      current.fileHash === entry.hash
+        ? { ...emptyWorkspace, error: '' }
+        : current,
+    );
+    setShowVerifyAnalysis(false);
 
     try {
       await deleteAssets([entry.hash]);
-
-      const nextHistory = history.filter((item) => item.id !== entry.id);
-      setHistory(nextHistory);
-      writeHistory(user.email, nextHistory);
-      if (selectedHistoryId && nextHistory.every((item) => item.id !== selectedHistoryId)) {
-        setSelectedHistoryId(nextHistory[0]?.id || '');
-      }
-      setAuthenticateWorkspace((current) =>
-        current.fileHash === entry.hash
-          ? { ...emptyWorkspace, error: '' }
-          : current,
-      );
-      setVerifyWorkspace((current) =>
-        current.fileHash === entry.hash
-          ? { ...emptyWorkspace, error: '' }
-          : current,
-      );
-      setShowVerifyAnalysis(false);
     } catch (error) {
-      window.alert(error.message || 'Unable to delete this file.');
+      console.warn('Backend delete did not complete:', error.message || error);
     } finally {
-      setDeleteBusy(false);
+      setDeleteBusyId('');
     }
   };
 
@@ -1292,7 +1292,7 @@ function App() {
           user={user}
           onSelectItem={(item) => setSelectedHistoryId(item.id)}
           onDeleteItem={handleDeleteHistoryItem}
-          deleteBusy={deleteBusy}
+          deleteBusyId={deleteBusyId}
         />
       );
     }
