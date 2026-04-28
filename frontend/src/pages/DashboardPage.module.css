@@ -1,0 +1,326 @@
+.container {
+  min-height: calc(100vh - 78px);
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) 360px;
+  gap: 1.5rem;
+}
+
+.scanCard,
+.phaseCard,
+.statCard,
+.alertsPanel,
+.assetsPanel,
+.alertCard,
+.assetCard,
+.emptyState {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.kicker,
+.noteLabel {
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--signal);
+}
+
+.scanCard {
+  padding: 1.4rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.scanCard strong {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.scanSources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.scanSources span {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.82rem;
+}
+
+.phaseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.phaseCard {
+  padding: 1.25rem;
+}
+
+.phaseCard h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.statCard {
+  padding: 1.4rem;
+}
+
+.statValue {
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.loading,
+.error,
+.emptyState {
+  padding: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(46, 196, 182, 0.18);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.error {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.error p {
+  color: #ffd3d3;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.alertsPanel,
+.assetsPanel {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panelHeader {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.alertList,
+.assetsList {
+  display: grid;
+  gap: 1rem;
+}
+
+.alertCard,
+.assetCard {
+  padding: 1rem;
+}
+
+.alertTop,
+.assetHeader,
+.assetFooter,
+.alertMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.alertTop h3,
+.assetHeader h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.alertTop p,
+.assetHeader p {
+  margin: 0;
+}
+
+.highBadge,
+.mediumBadge,
+.verified,
+.unverified {
+  flex-shrink: 0;
+  align-self: start;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.highBadge,
+.unverified {
+  background: rgba(255, 107, 107, 0.14);
+  color: #ffc1c1;
+}
+
+.mediumBadge,
+.verified {
+  background: rgba(93, 211, 158, 0.14);
+  color: #b5f0cf;
+}
+
+.alertMeta {
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.alertStatus {
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.alertAction {
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.filterSection {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterSection button {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.activeFilter {
+  background: rgba(46, 196, 182, 0.14) !important;
+  color: var(--text-primary) !important;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0.9rem 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.metaGrid code,
+.metaGrid strong {
+  color: var(--text-primary);
+}
+
+.scoreBar {
+  margin-bottom: 0.9rem;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent), #49a8ff);
+}
+
+.assetFooter {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero,
+  .mainGrid,
+  .phaseGrid,
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 1.25rem 0.9rem 3rem;
+  }
+
+  .scanCard,
+  .phaseCard,
+  .statCard,
+  .alertsPanel,
+  .assetsPanel {
+    padding: 1.1rem;
+  }
+
+  .alertTop,
+  .assetHeader,
+  .assetFooter,
+  .metaGrid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+}

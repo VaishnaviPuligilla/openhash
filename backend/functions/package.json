@@ -1,0 +1,25 @@
+{
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}

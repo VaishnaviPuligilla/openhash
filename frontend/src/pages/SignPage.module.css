@@ -1,0 +1,300 @@
+.container {
+  min-height: calc(100vh - 78px);
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.heroCopy,
+.heroPanel,
+.workspaceCard,
+.infoCard,
+.stepCard,
+.capabilityCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.heroCopy {
+  padding: 2rem;
+}
+
+.heroCopy p {
+  max-width: 62ch;
+  margin-top: 1rem;
+}
+
+.eyebrow,
+.kicker,
+.noteLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--signal);
+}
+
+.heroMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.metricCard {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metricCard strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.heroPanel {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.judgesNote,
+.outputPanel {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.judgesNote h3,
+.outputPanel h3 {
+  margin: 0.6rem 0;
+}
+
+.outputPanel ul,
+.infoCard ul {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.outputPanel li,
+.infoCard li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.outputPanel li::before,
+.infoCard li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+}
+
+.journeySection {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stepCard {
+  padding: 1.4rem;
+}
+
+.stepNumber {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: rgba(46, 196, 182, 0.15);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) 360px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.uploadSection,
+.infoSection {
+  display: grid;
+  gap: 1rem;
+}
+
+.workspaceCard {
+  padding: 1.4rem;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.formGrid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inputGroup {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.inputGroup span {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.hashDisplay {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.025);
+  display: grid;
+  gap: 1rem;
+}
+
+.hashInfo {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.label {
+  margin-bottom: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hash {
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.processingChecklist {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.processingChecklist div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.processingChecklist strong {
+  color: var(--text-primary);
+}
+
+.error {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+}
+
+.error {
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.error p {
+  color: #ffd3d3;
+}
+
+.resultSection {
+  animation: reveal 220ms ease;
+}
+
+.infoCard {
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.infoCard ol {
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.capabilityStack {
+  display: grid;
+  gap: 1rem;
+}
+
+.capabilityCard {
+  padding: 1.1rem 1.25rem;
+}
+
+.capabilityCard h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .grid,
+  .journeySection {
+    grid-template-columns: 1fr;
+  }
+
+  .heroMetrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 1.25rem 0.9rem 3rem;
+  }
+
+  .heroCopy,
+  .workspaceCard,
+  .heroPanel {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "openhash-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OpenHash - Digital Asset Protection Frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "crypto-js": "^4.1.1",
+    "firebase": "^10.0.0",
+    "ethers": "^6.8.0",
+    "react-router-dom": "^6.16.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
+    "vite": "^5.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.0"
+  }
+}

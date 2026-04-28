@@ -1,0 +1,305 @@
+[debug] [2026-04-28T14:31:22.762Z] ----------------------------------------------------------------------
+[debug] [2026-04-28T14:31:22.768Z] Command:       C:\Program Files\nodejs\node.exe D:\openhash\backend\functions\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions --project openhash-test
+[debug] [2026-04-28T14:31:22.769Z] CLI Version:   13.35.1
+[debug] [2026-04-28T14:31:22.769Z] Platform:      win32
+[debug] [2026-04-28T14:31:22.769Z] Node Version:  v24.14.0
+[debug] [2026-04-28T14:31:22.769Z] Time:          Tue Apr 28 2026 20:01:22 GMT+0530 (India Standard Time)
+[debug] [2026-04-28T14:31:22.769Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-28T14:31:23.138Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-28T14:31:23.138Z] > authorizing via signed-in user (vaishnavi12puligilla@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-04-28T14:31:23.152Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-28T14:31:23.152Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-04-28T14:31:23.161Z] [hub] writing locator at C:\Users\VYSHUJ~1\AppData\Local\Temp\hub-openhash-test.json
+[debug] [2026-04-28T14:31:23.195Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-28T14:31:23.196Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-28T14:31:23.196Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-28T14:31:23.196Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-04-28T14:31:23.236Z] defaultcredentials: writing to file C:\Users\Vyshujaanu\AppData\Roaming\firebase\vaishnavi12puligilla_gmail_com_application_default_credentials.json
+[debug] [2026-04-28T14:31:23.243Z] Setting GAC to C:\Users\Vyshujaanu\AppData\Roaming\firebase\vaishnavi12puligilla_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Vyshujaanu\\AppData\\Roaming\\firebase\\vaishnavi12puligilla_gmail_com_application_default_credentials.json"}}
+[debug] [2026-04-28T14:31:23.245Z] Checked if tokens are valid: true, expires at: 1777388877418
+[debug] [2026-04-28T14:31:23.245Z] Checked if tokens are valid: true, expires at: 1777388877418
+[debug] [2026-04-28T14:31:23.246Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/openhash-test/adminSdkConfig [none]
+[debug] [2026-04-28T14:31:24.098Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/openhash-test/adminSdkConfig 403
+[debug] [2026-04-28T14:31:24.099Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/openhash-test/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-04-28T14:31:24.100Z] Failed to get Admin SDK config for openhash-test, falling back to cache Failed to get Admin SDK for Firebase project openhash-test. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project openhash-test. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/openhash-test/adminSdkConfig had HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[warn] !  functions: Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect. {"metadata":{"emulator":{"name":"functions"},"message":"Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect."}}
+[warn] !  emulators: The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[info] i  functions: Watching "D:\openhash\backend\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\openhash\\backend\\functions\" for Cloud Functions..."}}
+[debug] [2026-04-28T14:31:24.150Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-28T14:31:26.511Z] > [functions] package.json contents: {
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2026-04-28T14:31:26.511Z] Building nodejs source
+[debug] [2026-04-28T14:31:26.512Z] Failed to find version of module node: reached end of search path D:\openhash\backend\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "24". Using node@24 from host. 
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:31:26.518Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-28T14:31:26.535Z] Found firebase-functions binary at 'D:\openhash\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8427
+
+[debug] [2026-04-28T14:31:27.587Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"},"sign":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sign"},"verify":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"verify"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: api, sign, verify. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api, sign, verify."}}
+[info] +  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/openhash-test/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/openhash-test/us-central1/api)."}}
+[info] +  functions[us-central1-sign]: http function initialized (http://127.0.0.1:5001/openhash-test/us-central1/sign). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/openhash-test/us-central1/sign)."}}
+[info] +  functions[us-central1-verify]: http function initialized (http://127.0.0.1:5001/openhash-test/us-central1/verify). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/openhash-test/us-central1/verify)."}}
+[debug] [2026-04-28T14:31:31.694Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┐
+│ Emulator  │ Host:Port      │
+├───────────┼────────────────┤
+│ Functions │ 127.0.0.1:5001 │
+└───────────┴────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-04-28T14:34:28.431Z] [work-queue] {"queuedWork":["/openhash-test/us-central1/api/api/analyze-2026-04-28T14:34:28.431Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-04-28T14:34:28.432Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/openhash-test/us-central1/api/api/analyze-2026-04-28T14:34:28.431Z"],"workRunningCount":1}
+[debug] [2026-04-28T14:34:28.432Z] Accepted request OPTIONS /openhash-test/us-central1/api/api/analyze --> us-central1-api
+[debug] [2026-04-28T14:34:28.446Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-04-28T14:34:28.447Z] [functions] Got req.url=/openhash-test/us-central1/api/api/analyze, mapping to path=/api/analyze {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/openhash-test/us-central1/api/api/analyze, mapping to path=/api/analyze"}}
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:34:28.471Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2026-04-28T14:34:28.473Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2026-04-28T14:34:31.384Z] [runtime-status] [8712] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.386Z] [runtime-status] [8712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"5.1.1","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"5.1.1\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.386Z] [runtime-status] [8712] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2026-04-28T14:34:31.387Z] [runtime-status] [8712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"5.1.1","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"5.1.1\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.894Z] [runtime-status] [8712] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Checked functions.config() {\"config\":{}}"}}
+[debug] [2026-04-28T14:34:31.894Z] [runtime-status] [8712] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"5.1.1","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"5.1.1\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2026-04-28T14:34:31.896Z] [runtime-status] [8712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"5.1.1","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"5.1.1\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.898Z] [runtime-status] [8712] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.902Z] [runtime-status] [8712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"5.1.1","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"5.1.1\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2026-04-28T14:34:31.903Z] [runtime-status] [8712] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"D:\\openhash\\backend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"D:\\\\openhash\\\\backend\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2026-04-28T14:34:31.933Z] [runtime-status] [8712] initializeApp(DEFAULT) {"storageBucket":"openhash-test.appspot.com","databaseURL":"https://openhash-test.firebaseio.com","projectId":"openhash-test"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] initializeApp(DEFAULT) {\"storageBucket\":\"openhash-test.appspot.com\",\"databaseURL\":\"https://openhash-test.firebaseio.com\",\"projectId\":\"openhash-test\"}"}}
+[debug] [2026-04-28T14:34:31.955Z] [runtime-status] [8712] Functions runtime initialized. {"cwd":"D:\\openhash\\backend\\functions","node_version":"24.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Functions runtime initialized. {\"cwd\":\"D:\\\\openhash\\\\backend\\\\functions\",\"node_version\":\"24.14.0\"}"}}
+[debug] [2026-04-28T14:34:31.956Z] [runtime-status] [8712] Listening to port: \\?\pipe\fire_emu_3edbd64f8bf4a5e2 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [8712] Listening to port: \\\\?\\pipe\\fire_emu_3edbd64f8bf4a5e2"}}
+[debug] [2026-04-28T14:34:31.989Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE"}}
+[debug] [2026-04-28T14:34:31.990Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2026-04-28T14:34:31.991Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: BUSY"}}
+[debug] [2026-04-28T14:34:31.997Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 6.6254ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 6.6254ms"}}
+[debug] [2026-04-28T14:34:31.998Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE"}}
+[debug] [2026-04-28T14:34:31.998Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-04-28T14:34:31.999Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-04-28T14:34:31.999Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-04-28T14:34:32.001Z] [work-queue] {"queuedWork":["/openhash-test/us-central1/api/api/analyze-2026-04-28T14:34:32.001Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-04-28T14:34:32.001Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/openhash-test/us-central1/api/api/analyze-2026-04-28T14:34:32.001Z"],"workRunningCount":1}
+[debug] [2026-04-28T14:34:32.001Z] Accepted request POST /openhash-test/us-central1/api/api/analyze --> us-central1-api
+[debug] [2026-04-28T14:34:32.003Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-04-28T14:34:32.003Z] [functions] Got req.url=/openhash-test/us-central1/api/api/analyze, mapping to path=/api/analyze {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/openhash-test/us-central1/api/api/analyze, mapping to path=/api/analyze"}}
+[debug] [2026-04-28T14:34:32.003Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2026-04-28T14:34:32.006Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: BUSY"}}
+[info] >  Gemini image request failed, retrying with text-only prompt: { {"user":"Gemini image request failed, retrying with text-only prompt: {","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Gemini image request failed, retrying with text-only prompt: {"}}
+[info] >    error: { {"user":"  error: {","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   error: {"}}
+[info] >      code: 503, {"user":"    code: 503,","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     code: 503,"}}
+[info] >      message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', {"user":"    message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.',"}}
+[info] >      status: 'UNAVAILABLE' {"user":"    status: 'UNAVAILABLE'","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     status: 'UNAVAILABLE'"}}
+[info] >    } {"user":"  }","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   }"}}
+[info] >  } {"user":"}","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m }"}}
+[info] >  Gemini unavailable in emulator, using local heuristic fallback: { {"user":"Gemini unavailable in emulator, using local heuristic fallback: {","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Gemini unavailable in emulator, using local heuristic fallback: {"}}
+[info] >    error: { {"user":"  error: {","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   error: {"}}
+[info] >      code: 503, {"user":"    code: 503,","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     code: 503,"}}
+[info] >      message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', {"user":"    message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.',","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     message: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.',"}}
+[info] >      status: 'UNAVAILABLE' {"user":"    status: 'UNAVAILABLE'","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     status: 'UNAVAILABLE'"}}
+[info] >    } {"user":"  }","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m   }"}}
+[info] >  } {"user":"}","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m }"}}
+[debug] [2026-04-28T14:35:01.744Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 29738.279ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 29738.279ms"}}
+[debug] [2026-04-28T14:35:01.745Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: IDLE"}}
+[debug] [2026-04-28T14:35:01.746Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-04-28T14:35:01.746Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-04-28T14:39:20.887Z] File D:\openhash\backend\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\openhash\\backend\\functions\\index.js changed, reloading triggers"}}
+[debug] [2026-04-28T14:39:21.929Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-28T14:39:24.872Z] > [functions] package.json contents: {
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2026-04-28T14:39:24.873Z] Building nodejs source
+[debug] [2026-04-28T14:39:24.874Z] Failed to find version of module node: reached end of search path D:\openhash\backend\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "24". Using node@24 from host. 
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:39:24.885Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-28T14:39:24.918Z] Found firebase-functions binary at 'D:\openhash\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8600
+
+[debug] [2026-04-28T14:39:26.432Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"},"sign":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sign"},"verify":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"verify"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: api, sign, verify. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api, sign, verify."}}
+[debug] [2026-04-28T14:39:30.510Z] [worker-pool] Shutting down IDLE worker (us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-api)"}}
+[debug] [2026-04-28T14:39:30.510Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: FINISHING"}}
+[debug] [2026-04-28T14:39:30.528Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: exited"}}
+[debug] [2026-04-28T14:39:30.529Z] [worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-9655bb57-05d8-45ce-922d-6f1866fa7333]: FINISHED"}}
+[debug] [2026-04-28T14:39:35.870Z] File D:\openhash\backend\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\openhash\\backend\\functions\\index.js changed, reloading triggers"}}
+[debug] [2026-04-28T14:39:36.875Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-28T14:39:38.547Z] > [functions] package.json contents: {
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2026-04-28T14:39:38.548Z] Building nodejs source
+[debug] [2026-04-28T14:39:38.548Z] Failed to find version of module node: reached end of search path D:\openhash\backend\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "24". Using node@24 from host. 
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:39:38.552Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-28T14:39:38.565Z] Found firebase-functions binary at 'D:\openhash\backend\functions\node_modules\.bin\firebase-functions'
+[debug] [2026-04-28T14:39:38.576Z] File D:\openhash\backend\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\openhash\\backend\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8773
+
+[debug] [2026-04-28T14:39:39.465Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"},"sign":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sign"},"verify":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"verify"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2026-04-28T14:39:39.582Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-28T14:39:40.982Z] > [functions] package.json contents: {
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2026-04-28T14:39:40.983Z] Building nodejs source
+[debug] [2026-04-28T14:39:40.983Z] Failed to find version of module node: reached end of search path D:\openhash\backend\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "24". Using node@24 from host. 
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:39:40.985Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-28T14:39:40.994Z] Found firebase-functions binary at 'D:\openhash\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8971
+
+[debug] [2026-04-28T14:39:42.092Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"},"sign":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sign"},"verify":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"verify"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: api, sign, verify. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api, sign, verify."}}
+[info] +  functions: Loaded functions definitions from source: api, sign, verify. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api, sign, verify."}}
+[debug] [2026-04-28T14:40:03.056Z] File D:\openhash\backend\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File D:\\openhash\\backend\\functions\\index.js changed, reloading triggers"}}
+[debug] [2026-04-28T14:40:04.071Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-28T14:40:05.630Z] > [functions] package.json contents: {
+  "name": "openhash-backend",
+  "version": "1.0.0",
+  "description": "OpenHash - Digital Asset Protection Backend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2026-04-28T14:40:05.630Z] Building nodejs source
+[debug] [2026-04-28T14:40:05.630Z] Failed to find version of module node: reached end of search path D:\openhash\backend\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "24". Using node@24 from host. 
+[info] i  functions: Loaded environment variables from .env.local. 
+[debug] [2026-04-28T14:40:05.634Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-28T14:40:05.648Z] Found firebase-functions binary at 'D:\openhash\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8779
+
+[debug] [2026-04-28T14:40:06.615Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"},"sign":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sign"},"verify":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"verify"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: api, sign, verify. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api, sign, verify."}}
