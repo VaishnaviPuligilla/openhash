@@ -4,6 +4,7 @@
   "description": "OpenHash - Digital Asset Protection Backend",
   "main": "index.js",
   "scripts": {
+    "start": "node render-server.js",
     "serve": "firebase emulators:start --only functions",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"

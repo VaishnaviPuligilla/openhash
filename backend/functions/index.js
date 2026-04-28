@@ -1337,6 +1337,8 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', service: 'OpenHash Backend' });
 });
 
+module.exports.app = app;
+
 // ============================================
 // Export Cloud Function
 // ============================================
